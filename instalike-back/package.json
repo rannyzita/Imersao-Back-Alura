@@ -15,6 +15,7 @@
     "type": "git",
     "url": ""
   },
+  
   "bugs": "",
   "keywords": [],
   "author": {
@@ -25,9 +26,11 @@
   "contributors": [],
   "scripts": {
     "dev": "",
+    "server": "npx nodemon server.js",
     "test": ""
   },
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
   }
 }
