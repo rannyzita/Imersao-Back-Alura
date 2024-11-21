@@ -23,7 +23,7 @@ app.listen(3000, () => {
 // rota
 app.get("/posts", (req, res) => {
     // 200 = requisição bem sucedida
-    res.redirect("https://http.cat/200")
+    res.redirect("https://http.cat/200");
     res.status(200).json(posts);
 });
 
