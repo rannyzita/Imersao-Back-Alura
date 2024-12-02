@@ -1,36 +1,16 @@
 import express from "express";
-import conectarAoBanco from "./src/config/dbConfig.js";
-
-await conectarAoBanco(process.env.STRING_CONEXAO);
-
-const posts = [
-    {
-        id: 1,
-        descricao: "Uma foto teste",
-        imagem: "https://placecats.com/millie/300/150"
-    },
-    {
-        id: 2,
-        descricao: "Gato fofo dormindo",
-        imagem: "https://placekitten.com/200/300"
-    }
-];
-
+import routes from "./src/routes/postsRoutes.js";
+ 
+// cria uma instância do Express, que será utilizada para criar o servidor web.
 const app = express();
-app.use(express.json());
+routes(app);
 
+// inicia o servidor na porta 3000 e exibe uma mensagem no console quando o servidor estiver ouvindo.
 app.listen(3000, () => {
     console.log("Servidor escutando...");
 });
 
-// rota
-app.get("/posts", (req, res) => {
-    // 200 = requisição bem sucedida
-    res.redirect("https://http.cat/200");
-    res.status(200).json(posts);
-});
-
-// criano um metodo especifico para buscar o id de algm post
+// criando um metodo especifico para buscar o id de algm post
 function buscarPostPorId(id) {
     return posts.findIndex((post) => {
         return post.id === Number(id);
