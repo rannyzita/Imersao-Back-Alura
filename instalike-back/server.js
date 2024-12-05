@@ -12,16 +12,3 @@ app.listen(3000, () => {
     console.log("Servidor escutando...");
 });
 
-// criando um metodo especifico para buscar o id de algm post
-// function buscarPostPorId(id) {
-//     return posts.findIndex((post) => {
-//         return post.id === Number(id);
-//     })
-// };
-
-// // :id quer dizer q vou acessar algm var id
-// app.get("/posts/:id", (req, res) => {
-//     // 200 = requisição bem sucedida
-//     const index = buscarPostPorId(req.params.id);
-//     res.status(200).json(posts[index]);
-// });

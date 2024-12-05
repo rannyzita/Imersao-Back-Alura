@@ -23,6 +23,13 @@ export async function criarPost(novoPost) {
 export async function atualizarPost(id, novoPost) {
     const db = conexao.db("imersao-instabytes");
     const colecao = db.collection("posts");
-    const objID = ObjectId.createFromHexString(id);
+    const objID = ObjectId.createFromHexString(id); // Converte o ID para um objeto
     return colecao.updateOne({_id: new ObjectId(objID)}, {$set:novoPost});
+}
+
+export async function removerPost(id) {
+    const db = conexao.db("imersao-instabytes");
+    const colecao = db.collection("posts");
+    const objID = ObjectId.createFromHexString(id); // Converte o ID para um objeto
+    return colecao.deleteOne({ _id: objID }); // Remove o post cujo _id corresponde ao ID fornecido
 }

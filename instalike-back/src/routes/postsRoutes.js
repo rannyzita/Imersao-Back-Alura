@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postsController.js";
+import { listarPosts, postarNovoPost, uploadImagem, atualizarNovoPost, removerPostUser} from "../controllers/postsController.js";
 import cors from "cors";
 
 const corsOption = {
@@ -43,6 +43,8 @@ const routes = (app) => {
 
     // vamos deixar publico a visualização de imagens do nosso servidor
     app.put("/upload/:id", atualizarNovoPost);
+
+    app.delete("/posts/:id", removerPostUser);
 };
 
 export default routes;
